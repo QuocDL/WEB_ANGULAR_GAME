@@ -1,0 +1,118 @@
+
+<main>
+    <div>
+        <img  src="https://chrisjonesgaming.net/wp-content/uploads/2021/01/NintendoSwitch_Subnautica_BelowZero_Banner2to1_2000x1000.jpg" class="w-[100%] rounded-lg h-[480px]" alt="">
+    </div>
+    <div class="mt-[25px] flex gap-y-12 gap-x-[118px] z-0 flex-wrap">
+        <div class="card z-0">
+            <div class="bg-white cursor-pointer border-x-4 px-12 border-orange-500  py-6 shadow-lg relative rounded-lg flex">
+                <div class="absolute -top-1 p-1 ">
+                    <img src="https://dixgames.com/wp-content/uploads/2023/08/icon-daominhha-danh-muc-16.png" width="110" alt="">
+                </div>
+                <div class="ml-[145px]">
+                    <h1 class="text-gray-700 font-extrabold text-[18px]">GAME CHO PC</h1>
+                    <a class="text-[14px] text-orange-500" href="">Xem Thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="bg-white cursor-pointer border-x-4 px-12 border-orange-500  py-6 shadow-lg relative rounded-lg flex">
+                <div class="absolute -top-1 p-1 ">
+                    <img src="https://dixgames.com/wp-content/uploads/2023/08/icon-daominhha-danh-muc-16.png" width="110"
+                        alt="">
+                </div>
+                <div class="ml-[145px]">
+                    <h1 class="text-gray-700 font-extrabold text-[18px]">GAME CHO PC</h1>
+                    <a class="text-[14px] text-orange-500" href="">Xem Thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="bg-white cursor-pointer border-x-4 px-12 border-orange-500  py-6 shadow-lg relative rounded-lg flex">
+                <div class="absolute -top-1 p-1 ">
+                    <img src="https://dixgames.com/wp-content/uploads/2023/08/icon-daominhha-danh-muc-16.png" width="110"
+                        alt="">
+                </div>
+                <div class="ml-[145px]">
+                    <h1 class="text-gray-700 font-extrabold text-[18px]">GAME CHO PC</h1>
+                    <a class="text-[14px] text-orange-500" href="">Xem Thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="bg-white cursor-pointer border-x-4 px-12 border-orange-500  py-6 shadow-lg relative rounded-lg flex">
+                <div class="absolute -top-1 p-1 ">
+                    <img src="https://dixgames.com/wp-content/uploads/2023/08/icon-daominhha-danh-muc-16.png" width="110"
+                        alt="">
+                </div>
+                <div class="ml-[145px]">
+                    <h1 class="text-gray-700 font-extrabold text-[18px]">GAME CHO PC</h1>
+                    <a class="text-[14px] text-orange-500" href="">Xem Thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="bg-white cursor-pointer border-x-4 px-12 border-orange-500  py-6 shadow-lg relative rounded-lg flex">
+                <div class="absolute -top-1 p-1 ">
+                    <img src="https://dixgames.com/wp-content/uploads/2023/08/icon-daominhha-danh-muc-16.png" width="110"
+                        alt="">
+                </div>
+                <div class="ml-[145px]">
+                    <h1 class="text-gray-700 font-extrabold text-[18px]">GAME CHO PC</h1>
+                    <a class="text-[14px] text-orange-500" href="">Xem Thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="bg-white cursor-pointer border-x-4 px-12 border-orange-500  py-6 shadow-lg relative rounded-lg flex">
+                <div class="absolute -top-1 p-1 ">
+                    <img src="https://dixgames.com/wp-content/uploads/2023/08/icon-daominhha-danh-muc-16.png" width="110"
+                        alt="">
+                </div>
+                <div class="ml-[145px]">
+                    <h1 class="text-gray-700 font-extrabold text-[18px]">GAME CHO PC</h1>
+                    <a class="text-[14px] text-orange-500" href="">Xem Thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   <div class="mt-[75px]">
+        <div class="relative">
+            <div class="absolute bottom-[1px] px-8 left-10 bg-[#FAFAFA] z-10">
+                <h1 class="text-[25px] font-extrabold">
+                    <b class="text-orange-500">GAMES</b>
+                </h1>
+            </div>
+            <div class="bg-black absolute bottom-4 z-0 w-[100%] h-[5px]"></div>
+        </div>
+            <div class="pt-[25px] grid grid-cols-4 gap-x-6 gap-y-10"  *ngIf="products && products.length">
+                <div *ngFor="let product of products">
+                        <div class="w-full">
+                            <div class="thumbnail hover:opacity-80 duration-150 cursor-pointer rounded-md  overflow-hidden relative h-auto ">
+                                <img class=" hover:scale-105 duration-150" src="{{product.thumbnail}}" width="350" alt="">
+                            </div>
+                            <div class="content">
+                                <h1 class="text-gray-700 font-extrabold whitespace-nowrap overflow-hidden text-ellipsis">{{product.title | uppercase}}</h1>
+                                <span class="text-[13px]">Ngày phát hành: <span class="text-gray-500">{{product.release_date}}</span></span>
+                                <div class="mt-[5px] flex justify-between">
+                                    <button class="bg-gray-900 hover:bg-orange-600 duration-150 py-2 px-4 flex gap-1 rounded-md text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        style="fill: rgba(255, 255, 255, 1)">
+                                        <path d="m12 16 4-5h-3V4h-2v7H8z"></path>
+                                        <path d="M20 18H4v-7H2v7c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2v-7h-2v7z"></path>
+                                    </svg>
+                                        <span class="font-bold">CHƠI NGAY</span>
+                                    </button>
+                                    <button class="bg-gray-900 hover:bg-orange-600 duration-150 py-2 px-4 flex gap-1 rounded-md text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-white">
+                                            <path d="M7 6v12l10-6z"></path>
+                                        </svg>
+                                        <span class="font-bold">TRAILER</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+   </div>
+</main>

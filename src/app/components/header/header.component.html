@@ -1,0 +1,74 @@
+<header class=" mb-[50px] z-100">
+    <div class="flex justify-between items-center mt-[25px] bg-[#FAFAFA] w-full">
+        <div class="nav-logo w-full">
+            <h1 class="text-[12px] font-mono whitespace-nowrap">Trở thành <a class="hover:underline text-red-600" href=""><b class="text-red-600">thành viên</b></a> để xem chi tiết game</h1>
+         
+        </div>
+        <div class="flex items-center justify-center w-full z-50">
+            <div class=" flex items-center z-50">
+                <div>
+                        <input [(ngModel)]="searchText" type="text" outfocus="value = ''"
+                            class="w-[330px] text-[12px] focus:outline-none border-none font-mono font-bold placeholder-black h-[30px] bg-blue-100 p-3"
+                            placeholder="Tìm kiếm game....">
+                        
+                        <div *ngIf="searchText.length > 1" class="bg-white rounded-lg mt-[15px] fixed z-100 border-x-4 border-orange-500 max-h-[580px] overflow-y-scroll w-[340px]">
+                            <a class="flex gap-2 p-1 hover:bg-gray-300 cursor-pointer" *ngFor="let e of searchItem | searchPipe: searchText">
+                                <img src="{{e.thumbnail}}" width="50" alt="">
+                                <span class="">{{e.title}}</span>
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-login flex w-full justify-end gap-2 items-center">
+            <div class="bg-gray-700  cursor-pointer p-[8px] rounded-[20px] flex items-center justify-center">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    class="fill-white hover:fill-orange-500 duration-100 ">
+                    <path
+                        d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z">
+                    </path>
+                </svg>
+            </div>
+            <div class="flex gap-2 text-[12px] font-sans font-bold">
+                <a class="hover:text-orange-500 duration-100" href="">ĐĂNG KÝ</a>
+                <a class="hover:text-orange-500 duration-100" href="">ĐĂNG NHẬP</a>
+            </div>
+        </div>
+    </div>
+    <div class="flex items-center justify-between">
+        <div>
+            <img src="https://dypdvfcjkqkg2.cloudfront.net/large/1485049-182.png" width="120" alt="">
+        </div>
+        <div>
+            <ul class="flex text-gray-700 gap-5 font-bold">
+                <li><a class="hover:text-orange-500" href="">GAME</a></li>
+                <div class="flex">
+                    <button class="peer text-gray-700">NỀN TẢNG</button>
+                    <div class="fixed z-10 hidden rounded-lg border-b-4 border-orange-500 peer-hover:flex hover:flex
+                            w-[200px] mt-[25px] text-[13px] font-bold
+                            flex-col bg-white drop-shadow-lg">
+                        <a class=" py-2 px-5 hover:text-orange-500" href="#">WINDOWS</a>
+                        <a class=" py-2 px-5 hover:text-orange-500" href="#">MOBILE</a>
+                        <a class=" py-2 px-5 hover:text-orange-500" href="#">WEB</a>
+                    </div>
+                </div>
+                <li><a class="hover:text-orange-500"href="">TIN TỨC</a></li>
+                <li><a class="hover:text-orange-500" href="">PHẦN MỀM</a></li>
+                <li><a class="hover:text-orange-500" href="">VỀ CHÚNG TÔI</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+   <div class="my-[8px]">
+        <div class="flex items-center">
+            <div>
+                <img src="https://seeklogo.com/images/F/fpt-logo-5B8F17203A-seeklogo.com.png" width="50" alt="">
+            </div>
+            <marquee class="z-0" scrollamount="25" onmousemove="stop()"  onmouseleave="start()" class="z-1 font-bold text-gray-700">
+               Xin chào các dev front-end. Đây là một website demo game của sinh viên <b class="underline"><a target="_blank" href="https://caodang.fpt.edu.vn/" class="text-orange-500">FPT POLYTECHNIC</a></b>.
+               Được code bằng <b class="text-orange-500">Angular </b> - <b class="text-orange-500">Nodejs </b> - <b class="text-orange-500">Tailwindcss </b>
+            </marquee>
+        </div>
+   </div>
+    <hr>
+</header>
