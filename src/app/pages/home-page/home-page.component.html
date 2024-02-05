@@ -85,9 +85,16 @@
             </div>
             <div class="bg-black absolute bottom-4 z-0 w-[100%] h-[5px]"></div>
         </div>
+            <div *ngIf="!products" class="flex items-center justify-center h-screen bg-[#fafafa]">
+                <div class="relative">
+                    <div class="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
+                    <div class="absolute top-0 left-0 h-24 w-24 rounded-full border-t-8 border-b-8 border-orange-500 animate-spin">
+                    </div>
+                </div>
+            </div>
             <div class="pt-[25px] grid grid-cols-4 gap-x-6 gap-y-10"  *ngIf="products && products.length">
                 <div *ngFor="let product of products">
-                        <div class="w-full">
+                        <a routerLink="/product/{{product.id}}" class="w-full">
                             <div class="thumbnail hover:opacity-80 duration-150 cursor-pointer rounded-md  overflow-hidden relative h-auto ">
                                 <img class=" hover:scale-105 duration-150" src="{{product.thumbnail}}" width="350" alt="">
                             </div>
@@ -111,7 +118,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                 </div>
             </div>
    </div>

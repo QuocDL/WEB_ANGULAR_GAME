@@ -7,9 +7,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { UserLayoutComponent } from './layout/user-layout/user-layout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { NgImageSliderModule } from 'ng-image-slider';
 import { FormsModule } from '@angular/forms';
 import { SearchPipePipe } from './pipes/search-pipe.pipe';
+import { DetailGameComponent } from './pages/detail-game/detail-game.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import { SafePipe } from './pipes/safe.pipe';
+import { LoginPageComponent } from './pages/user/login-page/login-page.component';
+import { RegisterPageComponent } from './pages/user/register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +23,19 @@ import { SearchPipePipe } from './pipes/search-pipe.pipe';
     UserLayoutComponent,
     FooterComponent,
     HomePageComponent,
-    SearchPipePipe
+    SearchPipePipe,
+    DetailGameComponent,
+    SafePipe,
+    LoginPageComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgImageSliderModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

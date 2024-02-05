@@ -203,7 +203,27 @@
       "developer": "InnoGames",
       "release_date": "2012-04-17",
       "freetogame_profile_url": "https://www.youtube.com/embed/t2iIGsmvr0g",
-      "gameplay": "https://www.youtube.com/embed/Oo7E52u4uYk"
+      "gameplay": "https://www.youtube.com/embed/Oo7E52u4uYk",
+      "system_requirements_medium": {
+        "medium": {
+          "System_Play": "Requirements",
+          "cpu": "Intel® Core™ i3 or Better",
+          "ram": "8 GB",
+          "card": "NVIDIA® GeForce® GTX 660, ATI Radeon™ series 78xx or Better",
+          "card_ram": "1024MB",
+          "os": "Windows® 7 / Windows® 8 / Windows® 10 64-bit (latest Service Pack)",
+          "freedisk": "12Gb"
+        },
+        "playgood": {
+          "System_Play": "Play Better",
+          "cpu": "Intel® Core™ i5 or AMD Ryzen™ 5",
+          "ram": "8 GB",
+          "card": "NVIDIA® GeForce® GTX 1060 or AMD Radeon™ RX480",
+          "card_ram": "2048MB",
+          "os": "Windows® 10 / Windows® 11 (64-bit)",
+          "freedisk": "12GB"
+        }
+      }
     },
     {
       "id": "427",
@@ -217,7 +237,27 @@
       "developer": "Bigpoint",
       "release_date": "2011-08-08",
       "freetogame_profile_url": "https://www.youtube.com/embed/nk1npBKFFlY",
-      "gameplay": "https://www.youtube.com/embed/kQu_zIpOADQ"
+      "gameplay": "https://www.youtube.com/embed/kQu_zIpOADQ",
+      "system_requirements_medium": {
+        "medium": {
+          "System_Play": "Requirements",
+          "cpu": "Intel® Core™ i3 or Better",
+          "ram": "8 GB",
+          "card": "NVIDIA® GeForce® GTX 660, ATI Radeon™ series 78xx or Better",
+          "card_ram": "1024MB",
+          "os": "Windows® 7 / Windows® 8 / Windows® 10 64-bit (latest Service Pack)",
+          "freedisk": "12Gb"
+        },
+        "playgood": {
+          "System_Play": "Play Better",
+          "cpu": "Intel® Core™ i5 or AMD Ryzen™ 5",
+          "ram": "8 GB",
+          "card": "NVIDIA® GeForce® GTX 1060 or AMD Radeon™ RX480",
+          "card_ram": "2048MB",
+          "os": "Windows® 10 / Windows® 11 (64-bit)",
+          "freedisk": "12GB"
+        }
+      }
     },
     {
       "id": "525",

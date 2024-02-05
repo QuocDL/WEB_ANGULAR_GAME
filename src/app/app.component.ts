@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +8,22 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 })
 export class AppComponent {
   title = 'WEB_ANGULAR_GAME';
-  loading = false  
+  loading!: boolean
 
   constructor(
+    private router: Router
   ){
   }
 
   ngOnInit(){
-    setTimeout(()=>{
-      this.loading = true
-    }, 2000)
+    this.router.events.subscribe((e)=>{
+      console.log(e);
+      if(e){
+        this.loading = false
+        setTimeout(()=>{
+          this.loading = true
+        }, 1500)
+      }
+    })
   }
 }

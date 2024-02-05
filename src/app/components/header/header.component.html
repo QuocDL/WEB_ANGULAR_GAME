@@ -1,18 +1,17 @@
-<header class=" mb-[50px] z-100">
-    <div class="flex justify-between items-center mt-[25px] bg-[#FAFAFA] w-full">
+<header class=" mb-[25px] z-100">
+    <div class="flex justify-between items-center mt-[25px] w-full">
         <div class="nav-logo w-full">
-            <h1 class="text-[12px] font-mono whitespace-nowrap">Trở thành <a class="hover:underline text-red-600" href=""><b class="text-red-600">thành viên</b></a> để xem chi tiết game</h1>
-         
+            <h1 class="text-[12px] font-mono whitespace-nowrap">Trở thành <a routerLink="/login" class="hover:underline text-red-600" href=""><b class="text-red-600">thành viên</b></a> để xem chi tiết game</h1>
         </div>
         <div class="flex items-center justify-center w-full z-50">
             <div class=" flex items-center z-50">
                 <div>
-                        <input [(ngModel)]="searchText" type="text" outfocus="value = ''"
+                        <input [(ngModel)]="searchText" type="search" 
                             class="w-[330px] text-[12px] focus:outline-none border-none font-mono font-bold placeholder-black h-[30px] bg-blue-100 p-3"
                             placeholder="Tìm kiếm game....">
                         
                         <div *ngIf="searchText.length > 1" class="bg-white rounded-lg mt-[15px] fixed z-100 border-x-4 border-orange-500 max-h-[580px] overflow-y-scroll w-[340px]">
-                            <a class="flex gap-2 p-1 hover:bg-gray-300 cursor-pointer" *ngFor="let e of searchItem | searchPipe: searchText">
+                            <a routerLink="/product/{{e.id}}" class="flex gap-2 p-1 hover:bg-gray-300 cursor-pointer" *ngFor="let e of searchItem | searchPipe: searchText">
                                 <img src="{{e.thumbnail}}" width="50" alt="">
                                 <span class="">{{e.title}}</span>
                             </a>
@@ -30,14 +29,14 @@
                 </svg>
             </div>
             <div class="flex gap-2 text-[12px] font-sans font-bold">
-                <a class="hover:text-orange-500 duration-100" href="">ĐĂNG KÝ</a>
-                <a class="hover:text-orange-500 duration-100" href="">ĐĂNG NHẬP</a>
+                <a routerLink="/register" class="hover:text-orange-500 duration-100" href="">ĐĂNG KÝ</a>
+                <a routerLink="/login" class="hover:text-orange-500 duration-100" href="">ĐĂNG NHẬP</a>
             </div>
         </div>
     </div>
     <div class="flex items-center justify-between">
         <div>
-            <img src="https://dypdvfcjkqkg2.cloudfront.net/large/1485049-182.png" width="120" alt="">
+            <a routerLink=""><img src="https://dypdvfcjkqkg2.cloudfront.net/large/1485049-182.png" width="120" alt=""></a>
         </div>
         <div>
             <ul class="flex text-gray-700 gap-5 font-bold">
@@ -64,7 +63,7 @@
             <div>
                 <img src="https://seeklogo.com/images/F/fpt-logo-5B8F17203A-seeklogo.com.png" width="50" alt="">
             </div>
-            <marquee class="z-0" scrollamount="25" onmousemove="stop()"  onmouseleave="start()" class="z-1 font-bold text-gray-700">
+            <marquee class="z-0" scrollamount="20" onmousemove="stop()"  onmouseleave="start()" class="z-1 font-bold text-gray-700">
                Xin chào các dev front-end. Đây là một website demo game của sinh viên <b class="underline"><a target="_blank" href="https://caodang.fpt.edu.vn/" class="text-orange-500">FPT POLYTECHNIC</a></b>.
                Được code bằng <b class="text-orange-500">Angular </b> - <b class="text-orange-500">Nodejs </b> - <b class="text-orange-500">Tailwindcss </b>
             </marquee>
