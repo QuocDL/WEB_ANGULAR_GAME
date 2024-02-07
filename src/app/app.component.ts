@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,9 +6,23 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
+  @HostListener('document:keydown', ['event'])
+  onKeyDown(event: KeyboardEvent) {
+    if (event.key === '123' ) {
+      event.preventDefault(); 
+    }
+  }
+  @HostListener('contextmenu', ['event'])
+  onRightClick(event: MouseEvent) {
+  event.preventDefault();
+  }
+  
+  
   title = 'WEB_ANGULAR_GAME';
   loading!: boolean
+ 
 
   constructor(
     private router: Router
@@ -22,7 +36,7 @@ export class AppComponent {
         this.loading = false
         setTimeout(()=>{
           this.loading = true
-        }, 1500)
+        }, 1200)
       }
     })
   }

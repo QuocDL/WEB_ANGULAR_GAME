@@ -92,7 +92,7 @@
                                 </path>
                             </svg>
                                 <span class="text-gray-700 font-bold">Dung Lượng: </span>
-                                <span *ngIf="product.system_requirements_medium.medium" class="font-semibold text-gray-700">{{product.system_requirements_medium.medium.freedisk || "N/A" | uppercase}}</span>
+                                <span  class="font-semibold text-gray-700">{{product.system_requirements_medium?.medium?.freedisk || "N/A" | uppercase}}</span>
                             </span>
                             <span class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -101,7 +101,7 @@
                                     <path d="M6 8h2v8H6zm3 0h1v8H9zm8 0h1v8h-1zm-4 0h3v8h-3zm-2 0h1v8h-1z"></path>
                                 </svg>
                                 <span class="text-gray-700 font-bold">Kích thước RAM: </span>
-                                <span *ngIf="product.system_requirements_medium.medium" class="font-semibold text-gray-700">{{product.system_requirements_medium.medium.ram || "N/A" | uppercase}}</span>
+                                <span  class="font-semibold text-gray-700">{{product.system_requirements_medium?.medium?.ram || "N/A" | uppercase}}</span>
                             </span>
                         </div>
                         <div class="bg-[#FAFAFA] py-4 leading-8 text-[14px] px-8 shadow-md w-[100%] h-full text-gray-700 rounded-lg">
@@ -147,23 +147,23 @@
                             </div>
                             <div class="text-gray-700" *ngIf="active === false">
                                <div class="mb-[15px]">
-                                <h1 class="font-semibold">{{product.system_requirements_medium.medium.System_Play | uppercase}}:</h1>
+                                <h1 class="font-semibold">{{product.system_requirements_medium?.medium?.System_Play || "N/A" | uppercase}}:</h1>
                                 <ul class="list-disc ml-[25px]">
-                                    <li><span class="font-medium">Cpu: </span>{{product.system_requirements_medium.medium.cpu}}</li>
-                                    <li><span class="font-medium">Graphics: </span>{{product.system_requirements_medium.medium.card}}</li>
-                                    <li><span class="font-medium">Memory: </span>{{product.system_requirements_medium.medium.ram}}</li>
-                                    <li><span class="font-medium">Graphics memory: </span>{{product.system_requirements_medium.medium.card_ram}}</li>
-                                    <li><span class="font-medium">os*: </span>{{product.system_requirements_medium.medium.os}}</li>
+                                    <li><span class="font-medium">Cpu: </span>{{product.system_requirements_medium?.medium?.cpu || "N/A" }}</li>
+                                    <li><span class="font-medium">Graphics: </span>{{product.system_requirements_medium?.medium?.card || "N/A" }}</li>
+                                    <li><span class="font-medium">Memory: </span>{{product.system_requirements_medium?.medium?.ram || "N/A" }}</li>
+                                    <li><span class="font-medium">Graphics memory: </span>{{product.system_requirements_medium?.medium?.card_ram || "N/A" }}</li>
+                                    <li><span class="font-medium">os*: </span>{{product.system_requirements_medium?.medium?.os || "N/A" }}</li>
                                 </ul>
                                </div>
                                <div>
-                                <h1 class="font-semibold">{{product.system_requirements_medium.playgood.System_Play | uppercase}}:</h1>
+                                <h1 class="font-semibold">{{product.system_requirements_medium?.playgood?.System_Play | uppercase}}:</h1>
                                 <ul class="list-disc ml-[25px]">
-                                    <li><span class="font-medium">Cpu: </span>{{product.system_requirements_medium.playgood.cpu}}</li>
-                                    <li><span class="font-medium">Graphics: </span>{{product.system_requirements_medium.playgood.card}}</li>
-                                    <li><span class="font-medium">Memory: </span>{{product.system_requirements_medium.playgood.ram}}</li>
-                                    <li><span class="font-medium">Graphics memory: </span>{{product.system_requirements_medium.playgood.card_ram}}</li>
-                                    <li><span class="font-medium">os*: </span>{{product.system_requirements_medium.playgood.os}}</li>
+                                    <li><span class="font-medium">Cpu: </span>{{product.system_requirements_medium?.playgood?.cpu || "N/A" }}</li>
+                                    <li><span class="font-medium">Graphics: </span>{{product.system_requirements_medium?.playgood?.card || "N/A" }}</li>
+                                    <li><span class="font-medium">Memory: </span>{{product.system_requirements_medium?.playgood?.ram || "N/A" }}</li>
+                                    <li><span class="font-medium">Graphics memory: </span>{{product.system_requirements_medium?.playgood?.card_ram || "N/A" }}</li>
+                                    <li><span class="font-medium">os*: </span>{{product.system_requirements_medium?.playgood?.os || "N/A" }}</li>
                                 </ul>
                                </div>
                             </div>
@@ -188,8 +188,13 @@
                         <div class="px-[55px] py-4 border-dashed flex justify-center items-center border-x-2 border-gray-700">
                             <span class=" text-gray-700 text-[12px] font-bold">{{product.release_date}}</span>
                         </div>
-                        <div class="ml-[15px]">
-                            <a target="_blank" href="{{product.game_url}}" class="text-orange-500 border-[2px] border-orange-500 rounded-md px-2">DOWNLOAD</a>
+                        <div [ngSwitch]="userState" class="ml-[15px]">
+                            <div *ngSwitchCase="true">
+                                <a target="_blank" href="{{product.game_url}}" class="text-orange-500 border-[2px] border-orange-500 rounded-md px-2">DOWNLOAD</a>
+                            </div>
+                            <div *ngSwitchCase="false">
+                                <span class="text-orange-500 text-[12px]">Bạn cần đăng nhập để tải game</span>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,12 @@
-<header class=" mb-[25px] z-100">
-    <div class="flex justify-between items-center mt-[25px] w-full">
-        <div class="nav-logo w-full">
-            <h1 class="text-[12px] font-mono whitespace-nowrap">Trở thành <a routerLink="/login" class="hover:underline text-red-600" href=""><b class="text-red-600">thành viên</b></a> để xem chi tiết game</h1>
+<header class="mb-[25px] z-100">
+    <div class="header flex  justify-between items-center pt-[25px] w-full">
+        <div [ngSwitch]="userState" class="nav-logo child-1 w-full">
+            <div *ngSwitchCase="'default'">
+                <h1 class="text-[12px] font-mono whitespace-nowrap">Trở thành <a routerLink="/login" class="hover:underline text-red-600" href=""><b class="text-red-600">thành viên</b></a> để xem chi tiết game</h1>
+            </div>
+            <div *ngSwitchCase="'admin' && 'user'">
+                <h1 class="text-[12px] font-mono whitespace-nowrap">Bạn đã trở thành thành viên. Hãy xem game</h1>
+            </div>
         </div>
         <div class="flex items-center justify-center w-full z-50">
             <div class=" flex items-center z-50">
@@ -19,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="nav-login flex w-full justify-end gap-2 items-center">
+        <div class="nav-login child-1 flex w-full justify-end gap-2 items-center">
             <div class="bg-gray-700  cursor-pointer p-[8px] rounded-[20px] flex items-center justify-center">
                 <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     class="fill-white hover:fill-orange-500 duration-100 ">
@@ -28,9 +33,24 @@
                     </path>
                 </svg>
             </div>
-            <div class="flex gap-2 text-[12px] font-sans font-bold">
-                <a routerLink="/register" class="hover:text-orange-500 duration-100" href="">ĐĂNG KÝ</a>
-                <a routerLink="/login" class="hover:text-orange-500 duration-100" href="">ĐĂNG NHẬP</a>
+            <div [ngSwitch]="userState" class="flex gap-2 child-1 text-[12px] font-sans font-bold">
+               <div class="flex gap-2 child-1 text-[12px] font-sans font-bold" *ngSwitchCase="'default'">
+                    <a routerLink="/register" class="hover:text-orange-500 duration-100" href="">ĐĂNG KÝ</a>
+                    <a routerLink="/login" class="hover:text-orange-500 duration-100" href="">ĐĂNG NHẬP</a>
+               </div>
+               <div *ngSwitchCase="'admin'" class="flex flex-col">
+                    <span>Hello <b>{{nameUser}}</b></span>
+                    <div class="flex justify-between">
+                        <a href="">Admin Manager</a>
+                        <button (click)="logOut()">LogOut</button>
+                    </div>
+               </div>
+               <div *ngSwitchCase="'user'" class="flex flex-col">
+                <span>Hello <b>{{nameUser}}</b></span>
+                <div class="flex justify-end">
+                    <button (click)="logOut()">LogOut</button>
+                </div>
+           </div>
             </div>
         </div>
     </div>

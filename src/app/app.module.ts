@@ -10,8 +10,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPipePipe } from './pipes/search-pipe.pipe';
 import { DetailGameComponent } from './pages/detail-game/detail-game.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs';
 import { SafePipe } from './pipes/safe.pipe';
 import { LoginPageComponent } from './pages/user/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/user/register-page/register-page.component';
@@ -33,9 +31,7 @@ import { RegisterPageComponent } from './pages/user/register-page/register-page.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatTabsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

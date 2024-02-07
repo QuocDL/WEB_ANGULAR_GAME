@@ -1,1 +1,54 @@
-<p>register-page works!</p>
+<main>
+   <div class="hr-bar">
+      <div class="flex z-10 bg-white pr-[4%] absolute gap-2 items-center ">
+         
+          <h1 class="font-bold text-gray-700 text-[20px]">ĐĂNG KÝ THÀNH VIÊN</h1>
+      </div>
+      <div class="h-1 relative z-0 -bottom-3 w-[100%] bg-orange-500">
+      </div>
+  </div>
+
+  <div class="py-[10%] flex justify-center">
+     <form #form="ngForm" (ngSubmit)="login()" class="w-[40%]" action="">
+     
+        <div class="mb-[10px]">
+           <div class="mb-[10px]"> 
+            <label for="" class="text-gray-700 font-mono font-bold pb-[20px]">Nhập tài khoản Email <span class="text-gray-500">*</span></label>
+           </div>
+            <input required email name="email" placeholder="example@gmail.com" [(ngModel)]="user.email" #email="ngModel" class="block p-2 bg-[#fafafa] w-[100%] h-[40px] border-[1px] border-gray-300"  type="email">
+            <div class="text-[12px] mt-[5px] text-red-500" *ngIf="(email.touched || email.dirty) && email.invalid">
+               <div *ngIf="email.errors?.['required']">
+                  Email không được để trống!
+               </div>
+               <div *ngIf="email.errors?.['email']">
+                  Email phải đúng định dạng!
+               </div>
+           </div>  
+        </div>
+        <div class="mb-[25px]">
+            <div class="mb-[10px]"> 
+             <label for="" class="text-gray-700 font-mono  font-bold pb-[20px]">Mật khẩu <span class="text-gray-500">*</span></label>
+            </div>
+             <input required minlength="8" #password="ngModel"  name="password"  placeholder="********" [(ngModel)]="user.password" class="block p-2 bg-[#fafafa] w-[100%] h-[40px] border-[1px] border-gray-300"  type="text">
+             <div class="text-[12px] mt-[5px] text-red-500" *ngIf="(password.touched || password.dirty) && password.invalid">
+               <div *ngIf="password.errors?.['required']">
+                  Password không được để trống!
+               </div>
+               <div *ngIf="password.errors?.['minlength']">
+                  Password phải lớn hơn 6 ký tự!
+               </div>
+           </div>     
+         </div>
+         <div class="flex gap-10"> 
+            <button [disabled]="form.invalid" type="submit" class="bg-orange-500 py-[10px] rounded-md shadow-md duration-150 hover:bg-orange-700 font-bold font-sans text-white w-[100%]">Đăng Ký</button>
+            <button routerLink="/register"  class="bg-orange-500 py-[10px] rounded-md shadow-md duration-150 hover:bg-orange-700 font-bold font-sans text-gray-500 w-[100%]">Đăng Nhập</button>
+         </div>
+     </form>
+  </div>
+
+
+ <div>
+    <div class="h-1 relative z-0 -bottom-3 w-[100%] bg-orange-500">
+    </div>
+ </div>
+</main>

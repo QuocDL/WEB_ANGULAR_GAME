@@ -11,8 +11,8 @@ export interface Product {
   release_date?: string;
   freetogame_profile_url: string;
   gameplay: string;
-  system_requirements_medium:{
-    medium: {
+  system_requirements_medium?:{
+    medium?: {
         System_Play: string,
         cpu: string,
         ram: string,
@@ -21,7 +21,7 @@ export interface Product {
         os: string,
         freedisk: string
    },
-   playgood: {
+   playgood?: {
         System_Play: string,
         cpu: string,
         ram: string,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -10,11 +10,12 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class DetailGameComponent {
   category = ''
-  menuList = ['Video Trailer' , 'System Requirements']
   listProduct!: Product[]
   active!:boolean
   product!: Product
+  userState = false
   constructor(
+    private router: Router,
     private services: ProductService,
     private route: ActivatedRoute
   ){}
@@ -23,10 +24,15 @@ export class DetailGameComponent {
       this.loadProduct()
       this.active = true
       this.loadProductALl()
+        if(sessionStorage.getItem('result')){
+          this.userState = true
+        }else{
+          this.userState =false
+        }
   }
 
-  clickBtn(params: boolean){
-    this.active = params
+  clickBtn(param: boolean){
+    this.active = param
   }
   loadProduct(){
     const id = this.route.snapshot.params['id']
