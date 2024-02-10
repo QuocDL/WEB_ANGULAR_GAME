@@ -68,6 +68,9 @@
                </div>
            </div>     
          </div>
+         <div class="text-center mb-[15px]">
+            <span class="text-red-500">{{loginState}}</span>
+         </div>
          <div class="flex gap-10"> 
             <button [disabled]="form.pristine || form.invalid" type="submit" class="disabled:bg-orange-300 bg-orange-500 py-[10px] rounded-md shadow-md duration-150 hover:bg-orange-700 font-bold font-sans text-white w-[100%]">{{formRegister ? "Đăng ký" : "Đăng Nhập"}}</button>
             <button routerLink="{{formRegister?  '/login': '/register'}}"  class="bg-orange-500 py-[10px] rounded-md shadow-md duration-150 hover:bg-orange-700 font-bold font-sans text-gray-500 w-[100%]">{{!formRegister ? "Đăng ký" : "Đăng Nhập"}}</button>

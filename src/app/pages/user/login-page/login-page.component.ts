@@ -17,6 +17,8 @@ export class LoginPageComponent {
     firstname: '',
     lastname: ''
   }
+  loginState = ''
+
   constructor(
     private router: Router,
     private services: UserService
@@ -36,16 +38,20 @@ export class LoginPageComponent {
 
   clickSubmit(){
     if(!this.formRegister){
-        this.services.loginService(this.user).subscribe(e=>{
-          if(e){
-            sessionStorage.setItem('result', JSON.stringify(e))
-            this.router.navigate(['/'])
-          }
-        })
+          this.services.loginService(this.user).subscribe((e)=>{
+            if(e){
+              sessionStorage.setItem('result', JSON.stringify(e))
+              this.router.navigate(['/'])
+            }
+          }, (error)=>{
+            this.loginState = error.error
+          })
     }else{
       this.services.registerServices(this.user).subscribe(e=>{
         console.log(e);
         this.router.navigate(['/login'])
+      }, err=>{
+        this.loginState = err.error
       })
     }
   }

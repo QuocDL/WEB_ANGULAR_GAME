@@ -4,8 +4,11 @@
             <div *ngSwitchCase="'default'">
                 <h1 class="text-[12px] font-mono whitespace-nowrap">Trở thành <a routerLink="/login" class="hover:underline text-red-600" href=""><b class="text-red-600">thành viên</b></a> để xem chi tiết game</h1>
             </div>
-            <div *ngSwitchCase="'admin' && 'user'">
+            <div *ngSwitchCase="'user'">
                 <h1 class="text-[12px] font-mono whitespace-nowrap">Bạn đã trở thành thành viên. Hãy xem game</h1>
+            </div>
+            <div *ngSwitchCase="'admin'">
+                <h1 class="text-[12px] font-mono whitespace-nowrap">Xin chào <b routerLink="/admin" class="cursor-pointer hover:underline text-orange-500">ADMIN</b>. Chúc bạn một ngày tốt lành!</h1>
             </div>
         </div>
         <div class="flex items-center justify-center w-full z-50">
@@ -41,7 +44,7 @@
                <div *ngSwitchCase="'admin'" class="flex flex-col">
                     <span>Hello <b>{{nameUser}}</b></span>
                     <div class="flex justify-between">
-                        <a href="">Admin Manager</a>
+                        <a routerLink="/admin">Admin Manager</a>
                         <button (click)="logOut()">LogOut</button>
                     </div>
                </div>

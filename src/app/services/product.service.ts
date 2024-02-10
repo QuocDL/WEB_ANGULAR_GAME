@@ -19,4 +19,9 @@ export class ProductService {
    getDetailProduct(id: any): Observable<Product>{
    return this.http.get<Product>(`${this.URI}/${id}`)
   }
+  deleteProduct(id:any): Observable<Product>{
+    return this.http.delete<Product>(`${this.URI}/${id}`)
+  }
+
+
 }

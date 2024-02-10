@@ -13,6 +13,11 @@ import { DetailGameComponent } from './pages/detail-game/detail-game.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { LoginPageComponent } from './pages/user/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/user/register-page/register-page.component';
+import { SideBarAdminComponent } from './components/side-bar-admin/side-bar-admin.component';
+import { AdminComponent } from './layout/admin/admin.component';
+import { ProductAdminListComponent } from './pages/admin/product-admin-list/product-admin-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -25,13 +30,18 @@ import { RegisterPageComponent } from './pages/user/register-page/register-page.
     DetailGameComponent,
     SafePipe,
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    SideBarAdminComponent,
+    AdminComponent,
+    ProductAdminListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
